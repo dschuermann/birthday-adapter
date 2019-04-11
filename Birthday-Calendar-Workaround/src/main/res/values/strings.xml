@@ -3,7 +3,7 @@
     <string name="app_name">Birthday Adapter JB Workaround</string>
     <string name="label">Birthday Adapter</string>
     <string name="authenticator_activity">org.birthdayadapter.ui.CreateAccountActivity</string>
-    <string name="account_type">org.birthdayadapter.account</string>
+    <string name="account_type">org.birthdayadapter.auth</string>
     <string name="package_name">org.birthdayadapter</string>
     <string name="real_app_name">Birthday Adapter</string>
 
