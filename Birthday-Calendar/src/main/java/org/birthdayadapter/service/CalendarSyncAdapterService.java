@@ -565,6 +565,7 @@ public class CalendarSyncAdapterService extends Service {
      */
     private static String generateTitle(Context context, int eventType, Cursor cursor,
                                         int eventCustomLabelColumn, boolean includeAge, String displayName, int age) {
+        displayName = addJubileeIcon(displayName, age);
         String title = null;
         if (displayName != null) {
             switch (eventType) {
@@ -601,6 +602,18 @@ public class CalendarSyncAdapterService extends Service {
         }
 
         return title;
+    }
+
+    /**
+     * Adds an icon if jubelee age
+     */
+    private static String addJubileeIcon(String displayName, int age) {
+        String jubilees = "18, 20, 30, 40, 50, 60, 70, 75, 80, 90, 100";
+        boolean is_jubilee = jubilees.contains(String.valueOf(age));
+        if (is_jubilee) {
+            displayName = "🍾 " + displayName;
+        }
+        return displayName;
     }
 
     private static void cleanTables(ContentResolver contentResolver, long calendarId) {
